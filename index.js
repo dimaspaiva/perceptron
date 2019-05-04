@@ -8,7 +8,7 @@ const points = new Array(1000).fill(0);
 console.log(
   "\n--------\n Início\n--------\n\n" +
     JSON.stringify(percep) +
-    "\n Regra X < Y\n"
+    "\n Regra 2X + 3 < Y\n"
 );
 
 let sum = 1;
