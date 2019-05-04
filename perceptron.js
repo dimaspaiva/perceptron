@@ -1,7 +1,8 @@
 class Perceptron {
   /*/ Construtor, inicializa nosso objeto/*/
-  constructor(data) {
-    this.weights = new Array(data.length).fill(0);
+  constructor(size) {
+    this.weights = new Array(size).fill(0);
+    this.lr = 0.1;
 
     /*/ Define de forma aleatória os pesos para cada entrada/*/
     for (let i in this.weights) {
@@ -19,6 +20,17 @@ class Perceptron {
 
     // Função de ativação
     return Math.sign(sum);
+  }
+
+  /*/ Treinamento do algoritmo /*/
+  train(inputs, target) {
+    const guess = this.guess(inputs);
+    const error = target - guess;
+
+    // Ajuste de todos os pesos
+    for (let i in this.weights) {
+      this.weights[i] += error * inputs[i] * this.lr;
+    }
   }
 }
 
