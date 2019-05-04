@@ -18,5 +18,17 @@ O método de aprendizado é o _feed foward_, que implica em um aprendizado unidi
   n < 0 => -1
   }
 
-- Resultado
-  Y = classificação
+- Results
+  Y = Classification
+
+- Error
+  e = answer - guess (resposta - hipótese)
+  possible results:
+  ans = ([1], [-1]) , guess = ([1], [-1])
+  e = ([0], [2], [-2])
+
+- Weights
+  Wo = Wo + ΔWo
+  ΔWo = e \* Xn \* lr
+  e = error
+  lr = learning rate
